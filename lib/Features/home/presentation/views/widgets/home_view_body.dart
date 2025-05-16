@@ -24,10 +24,11 @@ class _HomeViewBodyState extends State<HomeViewBody> {
     return BlocBuilder<GetProductsCubit, GetProductsState>(
       builder: (context, state) {
         if (state is GetProductsSuccess) {
+          List<ProductModel> products = state.products;
           return Padding(
-            padding: const EdgeInsets.all(12.0), // 🔧 padding حول الجريد
+            padding: const EdgeInsets.all(12.0), 
             child: GridView.builder(
-              itemCount: 20,
+              itemCount: products.length,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 mainAxisSpacing: 12,
@@ -35,7 +36,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                 childAspectRatio: 0.74,
               ),
               itemBuilder: (context, index) {
-                return const ProductItem();
+                return  ProductItem(product: products[index],);
               },
             ),
           );

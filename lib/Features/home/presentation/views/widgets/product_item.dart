@@ -1,9 +1,12 @@
+import 'package:elevat_task/Features/home/presentation/data/models/product_model.dart';
 import 'package:flutter/material.dart';
 
 class ProductItem extends StatelessWidget {
   const ProductItem({
-    super.key,
+    super.key, required this.product,
   });
+
+final ProductModel product ;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +31,7 @@ class ProductItem extends StatelessWidget {
                 decoration: BoxDecoration(
                   
                   image: DecorationImage(
-                    image: AssetImage("assets/images/test.jpg"),
+                    image: NetworkImage(product.image),
                     fit: BoxFit.contain,
                   ),
                 ),
@@ -62,8 +65,8 @@ class ProductItem extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    "Product Name sr fhgsh hs hfdsh  fhshf sh srh r sh ",
+                  Text(
+                    product.title,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
@@ -76,7 +79,7 @@ class ProductItem extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        "EGP 1,200",
+                        "EGP ${product.price}",
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
@@ -85,7 +88,7 @@ class ProductItem extends StatelessWidget {
                       ),
                       SizedBox(width: 10),
                       Text(
-                        "1,500",
+                        '${product.price+100}',
                         style: TextStyle(
                           decoration: TextDecoration.lineThrough,
                           decorationColor: Color.fromARGB(
@@ -106,10 +109,10 @@ class ProductItem extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: 5),
+                  Spacer(),
                   Row(
                     children: [
-                      const Text('Reviews (4.5)',
+                      Text('Reviews (${product.rate})',
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
