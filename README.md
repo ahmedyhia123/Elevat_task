@@ -1,1 +1,1 @@
-![صورة توضيحية](assets/images/example.png){width=300}
+![صورة توضيحية](assets/images/example.png)
