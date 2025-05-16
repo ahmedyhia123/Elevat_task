@@ -24,7 +24,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
     return BlocBuilder<GetProductsCubit, GetProductsState>(
       builder: (context, state) {
         if (state is GetProductsSuccess) {
-          List<ProductModel> products = state.products;
+          final List<ProductModel> products = state.products;
           return Padding(
             padding: const EdgeInsets.all(12.0), 
             child: GridView.builder(
@@ -41,7 +41,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
             ),
           );
         }else if(state is GetProductsFailure){
-          return Center(child: Text('There is an error'));
+          return const Center(child: Text('There is an error'));
         }else{
           return const Center(child: CircularProgressIndicator());
         }

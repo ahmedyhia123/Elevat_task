@@ -15,9 +15,9 @@ class HomeRepoImpl implements HomeRepo {
   Future<Either<Failure, List<ProductModel>>> getGetProducts() async {
     
     try {
-      var response = await apiService.get('products');
+      final response = await apiService.get('products');
       log('getGetProducts');
-      List<ProductModel> products = [];
+      final List<ProductModel> products = [];
       for (var item in response) {
         
         products.add(ProductModel.fromJson(item));

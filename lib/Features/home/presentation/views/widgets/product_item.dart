@@ -58,7 +58,7 @@ final ProductModel product ;
               ),
             ],
           ),
-          SizedBox(height: 5),
+          const SizedBox(height: 5),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(8.0),
@@ -69,29 +69,29 @@ final ProductModel product ;
                     product.title,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                       color: Color.fromARGB(255, 5, 72, 128),
                     ),
                   ),
-                  SizedBox(height: 5),
+                  const SizedBox(height: 5),
                   Row(
                     children: [
                       Text(
                         "EGP ${product.price}",
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
-                          color: const Color.fromARGB(255, 5, 72, 128),
+                          color: Color.fromARGB(255, 5, 72, 128),
                         ),
                       ),
-                      SizedBox(width: 10),
+                      const SizedBox(width: 10),
                       Text(
                         '${product.price+100}',
                         style: TextStyle(
                           decoration: TextDecoration.lineThrough,
-                          decorationColor: Color.fromARGB(
+                          decorationColor: const Color.fromARGB(
                             255,
                             5,
                             72,
@@ -109,21 +109,21 @@ final ProductModel product ;
                       ),
                     ],
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Row(
                     children: [
                       Text('Reviews (${product.rate})',
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
                             color: Color.fromARGB(255, 5, 72, 128),
                       )),
-                      Icon(Icons.star, color: Colors.amber),
-                      Spacer(),
-                      CircleAvatar(
+                      const Icon(Icons.star, color: Colors.amber),
+                      const Spacer(),
+                      const CircleAvatar(
                         radius: 18,
-                        backgroundColor: const Color.fromARGB(255, 5, 72, 128),
-                        child: const Icon(
+                        backgroundColor: Color.fromARGB(255, 5, 72, 128),
+                        child: Icon(
                           Icons.add,
                           color: Colors.white,
                         ),
