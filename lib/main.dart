@@ -1,10 +1,10 @@
+import 'package:elevat_task/Core/servises/get_it_service.dart';
 import 'package:elevat_task/Features/home/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp()
-
-  );
+  setup();
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {

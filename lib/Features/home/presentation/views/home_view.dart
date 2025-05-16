@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:elevat_task/Core/servises/api_service.dart';
+import 'package:elevat_task/Core/servises/get_it_service.dart';
 import 'package:elevat_task/Features/home/presentation/data/repo/home_repo_impl.dart';
 import 'package:elevat_task/Features/home/presentation/manger/cubit/get_products_cubit.dart';
 import 'package:elevat_task/Features/home/presentation/views/widgets/home_view_body.dart';
@@ -16,7 +17,7 @@ class HomeView extends StatelessWidget {
       body: SafeArea(
         child: Center(
           child: BlocProvider(
-            create: (context) => GetProductsCubit(HomeRepoImpl(ApiService(Dio()))),
+            create: (context) => GetProductsCubit(getIt<HomeRepoImpl>()),
             child: HomeViewBody(),
           ),
         ),
